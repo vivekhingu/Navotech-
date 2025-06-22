@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navotech – Ethical Hacking Tools</title>
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --text: #E0E0E0;
+      --accent: #00FFC2;
+      --secondary: #888;
+    }
+    body {
+      margin:0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: var(--accent);
+    }
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-image: url('ai-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:1rem;
+      padding:2rem;
+    }
+    .tool {
+      background: var(--surface);
+      padding:1rem;
+      border-radius:6px;
+    }
+    .tool h3 { color: var(--accent); }
+    .contact {
+      background: var(--surface);
+      padding:2rem;
+      margin:2rem;
+      border-radius:6px;
+    }
+    .contact label { display:block; margin-bottom:.5rem; }
+    .contact input, .contact textarea {
+      width:100%; padding:.5rem; margin-bottom:1rem;
+      background:#2A2A2A; color: var(--text); border:none; border-radius:4px;
+    }
+    .contact button {
+      padding:.75rem 1.5rem;
+      background:var(--accent);
+      color:#000;
+      border:none; border-radius:4px;
+      cursor:pointer;
+    }
+    footer {
+      text-align:center;
+      padding:1rem;
+      font-size:.9rem;
+      color: var(--secondary);
+    }
+    /* Theme toggle (optional) */
+    .toggle {
+      position: fixed;
+      top:1rem; right:1rem;
+    }
+    button.toggle-btn {
+      background:var(--surface);
+      color:var(--text);
+      border:none; padding:.5rem;
+      border-radius:4px; cursor:pointer;
+    }
+    img {
+      max-width:100%;
+      filter: brightness(.8) contrast(1.2);
+      border-radius:4px;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+  <header>
+    <h1>Navotech Ethical Hacking Tools</h1>
+    <p>Open-access, AI-enhanced cybersecurity utility suite</p>
+  </header>
+
+  <section class="tools">
+    <div class="tool">
+      <h3>Tool Alpha</h3>
+      <p>Description: AI-powered vulnerability scanner.</p>
+    </div>
+    <div class="tool">
+      <h3>Tool Beta</h3>
+      <p>Description: Network penetration tester.</p>
+    </div>
+    <!-- Add more tools here -->
+  </section>
+
+  <section class="contact">
+    <h2>Contact & Feedback</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Your name"/>
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com"/>
+      <label>Message</label>
+      <textarea rows="5" placeholder="Your message..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Navotech – Ethical Hacking Tools for Everyone
+  </footer>
+
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    }
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const defaultTheme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(defaultTheme);
+    })();
+  </script>
+</body>
+  </html>
